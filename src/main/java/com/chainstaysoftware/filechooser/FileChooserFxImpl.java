@@ -72,6 +72,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Application;
 
 public final class FileChooserFxImpl implements FileChooserFx {
    private static Logger logger = Logger.getLogger("com.chainstaysoftware.filechooser.FileChooserFxImpl");
@@ -538,6 +539,8 @@ public final class FileChooserFxImpl implements FileChooserFx {
       borderPane.setTop(topVbox);
       borderPane.setCenter(splitPane);
       borderPane.setBottom(bottomVbox);
+      
+       //Application.setUserAgentStylesheet(new FileBrowserCss().getUrl());
 
       final Scene scene = new Scene(borderPane, widthProperty.doubleValue(), heightProperty.doubleValue());
       scene.getStylesheets().add(new FileBrowserCss().getUrl());
